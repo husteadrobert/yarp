@@ -1,0 +1,35 @@
+%section.reviews.container
+  %header
+    %h1 Reviews for BUSINESS NAME
+  %ul
+    %li
+      %section.review
+        %p Review Text
+        %p
+          %a{href: '#'} Reviewer
+          %span ON DATE
+    %li
+      %section.review
+        %p Review Text
+        %p
+          %a{href: '#'} Reviewer
+          %span ON DATE
+    %li
+      %section.review
+        %p Review Text
+        %p
+          %a{href: '#'} Reviewer
+          %span ON DATE
+
+%section.review.container
+  %form
+    %header
+      %h1 Write a Review for PLACE NAME
+    %fieldset
+      .form-group
+        %label Review
+        .row
+          .col-sm-4
+            %textarea{rows: "20", cols: "70"}
+    %fieldset.form-group.action
+      %input(type="submit" value="Submit" class="btn btn-default")

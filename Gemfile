@@ -13,6 +13,8 @@ gem 'haml-rails'
 
 gem 'rails', '~> 5.1.4'
 
+gem 'jquery-rails'
+
 gem 'pg', '~> 0.18'
 
 gem 'puma', '~> 3.7'
@@ -31,6 +33,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+gem 'bootstrap-sass', '~> 3.3'
+gem 'autoprefixer-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

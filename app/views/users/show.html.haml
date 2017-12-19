@@ -1,0 +1,22 @@
+%section.register.container
+  %dl
+    %dt Name:
+    %dd= @user.name
+    %dt Email:
+    %dd= @user.email
+
+  %h2= "Reviews by #{@user.name}"
+
+  %ul
+    %li
+      %section.review
+        %h3 <a href="#">Business Name</a>
+        %p Review Text
+    %li
+      %section.review
+        %h3 <a href="#">Business Name</a>
+        %p Review Text
+    %li
+      %section.review
+        %h3 <a href="#">Business Name</a>
+        %p Review Text

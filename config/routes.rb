@@ -1,5 +1,20 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   get 'ui(/:action)', controller: 'ui'
+
+  root to: 'pages#front'
+  get 'home', to: 'pages#home'
+
+  resources :businesses, except: [:destroy, :edit, :update] do
+    resources :reviews, only: [:create]
+  end
+
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  get 'logout', to: 'sessions#destroy'
+
+  get 'register', to: 'users#new'
+  post 'register', to: 'users#create'
+  resources :users, only: [:create]
+
 end

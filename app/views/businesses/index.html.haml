@@ -1,0 +1,7 @@
+%section.list.container
+  %header
+    %h1 List of Businesses
+  %ul
+    - @businesses.each do |business|
+      %li
+        = link_to business.name, business_path(business)

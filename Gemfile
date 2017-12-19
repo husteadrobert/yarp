@@ -10,6 +10,9 @@ end
 gem 'haml'
 gem 'haml-rails'
 
+gem 'pry'
+gem 'pry-nav'
+
 
 gem 'rails', '~> 5.1.4'
 
@@ -42,7 +45,12 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
+  gem 'rspec-rails'
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers'
+  gem 'rails-controller-testing'
+  gem 'fabrication'
+  gem 'faker'
 end
 
 group :development do

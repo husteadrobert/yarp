@@ -1,0 +1,24 @@
+%section.addbusiness.container
+  .row
+    .col-sm-10.col-sm-offset-1
+      = form_for(@business) do |f|
+        %header
+          %h1 Add a new Business
+        %fieldset
+          .form-group
+            = f.label :name, "Business Name"
+            .row
+              .col-sm-4
+                = f.text_field :name, class: "form-control"
+          .form-group
+            = f.label :address, "Business Address"
+            .row
+              .col-sm-4
+                = f.text_field :address, class: "form-control"
+          .form-group
+            = f.label :phone_number, "Business Phone Number"
+            .row
+              .col-sm-4
+                = f.text_field :phone_number, class: "form-control"
+        %fieldset.form-group.action
+          = f.submit "Add Business", class: "btn btn-default"

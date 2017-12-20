@@ -8,15 +8,8 @@
   %h2= "Reviews by #{@user.name}"
 
   %ul
-    %li
-      %section.review
-        %h3 <a href="#">Business Name</a>
-        %p Review Text
-    %li
-      %section.review
-        %h3 <a href="#">Business Name</a>
-        %p Review Text
-    %li
-      %section.review
-        %h3 <a href="#">Business Name</a>
-        %p Review Text
+    - @user.reviews.each do |review|
+      %li
+        %section.review
+          %h3= link_to review.business.name, business_path(review.business)
+          %p= review.body

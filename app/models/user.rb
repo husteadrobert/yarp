@@ -7,5 +7,7 @@ class User < ActiveRecord::Base
 
   has_many :reviews
 
-  
+  def has_reviewed?(business)
+    self.reviews.exists?(business_id: business.id)
+  end
 end

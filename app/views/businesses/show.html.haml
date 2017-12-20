@@ -6,9 +6,8 @@
       %li
         %section.review
           %p= review.body
-          %p
-            = link_to review.user.name, user_path(review.user)
-            %span= "on #{review.created_at}"
+          = link_to review.user.name, user_path(review.user)
+          %span= "on #{review.created_at}"
   - if current_user.has_reviewed?(@business)
     %header
       %h1= "Thank you for your Review!"

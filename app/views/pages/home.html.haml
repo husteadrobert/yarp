@@ -10,4 +10,5 @@
             %span= "on #{review.created_at}"
           %p= review.body
           %ul.nav.nav-pills
-            %li{role: "presentation"}= link_to review.user.name, user_path(review.user)
+            %li{role: "presentation"}
+              = link_to review.user.name, user_path(review.user)

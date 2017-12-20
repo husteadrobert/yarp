@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true
 
-  has_many :reviews
+  has_many :reviews, -> { order "created_at DESC" }
 
   def has_reviewed?(business)
     self.reviews.exists?(business_id: business.id)

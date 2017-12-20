@@ -2,34 +2,21 @@
   %header
     %h1= "Reviews for #{@business.name}"
   %ul
-    %li
-      %section.review
-        %p Review Text
-        %p
-          %a{href: '#'} Reviewer
-          %span ON DATE
-    %li
-      %section.review
-        %p Review Text
-        %p
-          %a{href: '#'} Reviewer
-          %span ON DATE
-    %li
-      %section.review
-        %p Review Text
-        %p
-          %a{href: '#'} Reviewer
-          %span ON DATE
-
-%section.review.container
-  %form
+    - @business.reviews.each do |review|
+      %li
+        %section.review
+          %p= review.body
+          %p
+            = link_to review.user.name, user_path(review.user)
+            %span= "on #{review.created_at}"
+  = form_for([@business, @review]) do |f|
     %header
       %h1= "Write a Review for #{@business.name}"
     %fieldset
       .form-group
-        %label Review
+        = f.label :body, "Write your Review Here"
         .row
           .col-sm-4
-            %textarea{rows: "20", cols: "70"}
+            = f.text_area :body, rows: 20, cols: 70
     %fieldset.form-group.action
-      %input(type="submit" value="Submit" class="btn btn-default")
+      = f.submit "Submit Review", class: "btn btn-default"

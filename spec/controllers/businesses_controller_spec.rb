@@ -97,5 +97,10 @@ describe BusinessesController do
       get :show, params: {id: biz.id}
       expect(assigns(:business).id).to eq(biz.id)
     end
+    it "has a @review variable" do
+      biz = Fabricate(:business)
+      get :show, params: {id: biz.id}
+      expect(assigns(:review)).to_not be_nil
+    end
   end
 end

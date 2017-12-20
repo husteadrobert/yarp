@@ -5,6 +5,6 @@ class PagesController < ApplicationController
   end
 
   def home
-    ##Display recent reviews
+    @recent_reviews = Review.recent_reviews
   end
 end

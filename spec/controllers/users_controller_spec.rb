@@ -12,7 +12,6 @@ describe UsersController do
     it "creates a new user from login variables" do
       count = User.count
       post :create, params: {user: Fabricate.attributes_for(:user)}
-      #post :create, user: Fabricate.attributes_for(:user)
       expect(User.count).to eq(count + 1)
     end
     it "redirects to the login page" do

@@ -48,10 +48,9 @@ describe ReviewsController do
         post :create, params: { review: Fabricate.attributes_for(:review), business_id: business.id }
         expect(Review.count).to eq(count)
       end
-      it "redirects to the login page" do
-        post :create, params: { review: Fabricate.attributes_for(:review), business_id: business.id }
-        expect(response).to redirect_to login_path
-      end
+    end
+    it_behaves_like "requires sign in" do
+      let(:action) { post :create, params: { review: Fabricate.attributes_for(:review), business_id: business.id } }
     end
   end
 end

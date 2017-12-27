@@ -38,11 +38,8 @@ describe BusinessesController do
         expect(assigns(:business)).to be_a_new(Business)
       end
     end
-    context "with non-logged in user" do
-      it "redirects to the login page" do
-        get :new
-        expect(response).to redirect_to login_path
-      end
+    it_behaves_like "requires sign in" do
+      let(:action) { get :new }
     end
   end
 
@@ -79,15 +76,15 @@ describe BusinessesController do
     end
 
     context "with non-logged in user" do
-      it "redirects to the login page" do
-        post :create, params: {business: Fabricate.attributes_for(:business)}
-        expect(response).to redirect_to login_path
-      end
       it "doesn't save the business" do
         count = Business.count
         post :create, params: {business: Fabricate.attributes_for(:business)}
         expect(Business.count).to eq(count)
       end
+    end
+
+    it_behaves_like "requires sign in" do
+      let(:action) { get :new }
     end
   end
 
